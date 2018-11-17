@@ -1,0 +1,13 @@
+---
+- hosts: raspberrypi_3
+
+  vars_files:
+    - vars/vault.yml
+
+  roles:
+    - role: drew-kun.wifi_ap
+      wifi_ap_essid: "{{ vault_wifi_ap_essid }}"
+      wifi_ap_passphrase: "{{ vault_wifi_ap_passphrase }}"
+      wifi_ap_WAN: wlan0
+      wifi_ap_WLAN: wlan1
+...
