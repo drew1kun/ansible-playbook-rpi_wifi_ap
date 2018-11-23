@@ -1,4 +1,4 @@
-Ansible playbook: wifi_ap
+ansible-rpi3-wifi-access-point-playbook
 =========
 
 [![MIT licensed][mit-badge]][mit-link]
@@ -7,9 +7,9 @@ Ansible playbook for Raspberry Pi automated Access Point setup and configuration
 
 Does the following:
 
- - Installs and configures isc-dhcp-server.
- - Installs and configures hostapd.
- - Installs and configures iptables-persistent (for now needs a reboot to load the iptables kernel modules).
+ - Installs and configures `isc-dhcp-server`.
+ - Installs and configures `hostapd`.
+ - Installs and configures `iptables-persistent` (for now needs a reboot to load the iptables kernel modules).
 
 It is assumed that the raspberry pi 3(with built in broadcom wifi adapter) is used with additiional Ralink usb wifi dongle.
 
