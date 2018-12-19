@@ -32,6 +32,7 @@ Playbook Variables
 |----------|-------------|---------|
 | **vault_wifi_ap_essid** | The Access Point ESSID | set your own in `vars/vault.yml` |
 | **vault_wifi_ap_passphrase** | The Access Point WPA/WPA2 passphrase | set your own in `vars/vault.yml` |
+| **vault_wifi_ap__rpi3_network_wifi_APs** | The list of wifi networks to be configured on the system using the rpi3_network role | set your own in `vars/vault.yml`, please check [`drew-kun.rpi3_network/default/main.yaml`][net-aps-link] for reference |
 
 Dependencies
 ------------
@@ -44,10 +45,54 @@ Install via ansible-galaxy:
     ansible-galaxy install drew-kun.rpi3_network \
                            drew-kun.wifi_ap
 
-Example Using Playbook
+Playbook Usage Example
 ----------------------
+**ATTENTION!**
+
+variables are set in **vars/vault.yml**,
+which is encrypted with [ansible-vault][ansible-vault-link].
+
+Therefore we have multiple options to run the play:
+
+### OPTION 0:
+Just put the `.vault.key` to the playbook dir and run play:
 
     ansible-playbook --user user -k wifi_ap_playbook.yml --vault-password-file=.vault.key
+
+### OPTION 1:
+Before running the role decrypt the file *vars/main.yml* with:
+
+    ansible-vault decrypt vars/main.yml --vault-password-file=.vault.key`
+
+Then run play:
+
+    ansible-playbook --user user -k wifi_ap_playbook.yml
+
+### OPTION 2:
+Set environment variable:
+
+    export ANSIBLE_VAULT_PASSWORD_FILE=.vault.key
+
+Then run play:
+
+    ansible-playbook --user user -k wifi_ap_playbook.yml
+
+### OPTION 3 (PREFERRED):
+add the following to **ansible.cfg**:
+
+    [defaults]
+    vault_password_file = .vault.key
+
+Modify the **vars/vault.yml** as you wish using:
+
+    ansible-vault edit vars/vault.yml
+
+Then run play as follows:
+
+    ansible-playbook --user user -k wifi_ap_playbook.yml
+
+
+
 
 License
 -------
