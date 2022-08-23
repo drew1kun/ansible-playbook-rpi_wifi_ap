@@ -5,7 +5,7 @@
     - vars/vault.yml
 
   roles:
-    - role: drew-kun.wifi_ap
+    - role: drew1kun.wifi_ap
       wifi_ap_essid: "{{ vault_wifi_ap_essid }}"
       wifi_ap_passphrase: "{{ vault_wifi_ap_passphrase }}"
       wifi_ap_WAN: wlan0
@@ -13,4 +13,3 @@
 
       # Override the list of wifi networks to be configured byt rip3_network role
       wif_ap__rpi3_network_wifi_APs: "{{  vault_wifi_ap__rpi3_network_wifi_APs }}"
-...

@@ -32,18 +32,18 @@ Playbook Variables
 |----------|-------------|---------|
 | **vault_wifi_ap_essid** | The Access Point ESSID | set your own in `vars/vault.yml` |
 | **vault_wifi_ap_passphrase** | The Access Point WPA/WPA2 passphrase | set your own in `vars/vault.yml` |
-| **vault_wifi_ap__rpi3_network_wifi_APs** | The list of wifi networks to be configured on the system using the rpi3_network role | set your own in `vars/vault.yml`, please check [`drew-kun.rpi3_network/default/main.yaml`][net-aps-link] for reference |
+| **vault_wifi_ap__rpi3_network_wifi_APs** | The list of wifi networks to be configured on the system using the rpi3_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi3_network/default/main.yaml`][net-aps-link] for reference |
 
 Dependencies
 ------------
 
- - [drew-kun.rpi3_network][rpi3_network-galaxy-link]
- - [drew-kun.wifi_ap][wifi_ap-galaxy-link]
+ - [drew1kun.rpi3_network][rpi3_network-galaxy-link]
+ - [drew1kun.wifi_ap][wifi_ap-galaxy-link]
 
 Install via ansible-galaxy:
 
-    ansible-galaxy install drew-kun.rpi3_network \
-                           drew-kun.wifi_ap
+    ansible-galaxy install drew1kun.rpi3_network \
+                           drew1kun.wifi_ap
 
 Playbook Usage Example
 ----------------------
@@ -104,8 +104,8 @@ Author Information
 
 Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
-[rpi3_network-galaxy-link]: https://galaxy.ansible.com/drew-kun/rpi3_network/
-[wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew-kun/wifi_ap/
+[rpi3_network-galaxy-link]: https://galaxy.ansible.com/drew1kun/rpi3_network/
+[wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew1kun/wifi_ap/
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-link]: https://raw.githubusercontent.com/drew-kun/ansible-macos_setup/master/LICENSE
+[mit-link]: https://raw.githubusercontent.com/drew1kun/ansible-macos_setup/master/LICENSE
