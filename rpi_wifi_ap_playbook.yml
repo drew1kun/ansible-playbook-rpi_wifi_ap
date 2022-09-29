@@ -1,0 +1,15 @@
+---
+- hosts: raspberrypi_3
+
+  vars_files:
+    - vars/vault.yml
+
+  roles:
+    - role: drew1kun.rpi_wifi_ap
+      rpi_wifi_ap_essid: "{{ vault_rpi_wifi_ap_essid }}"
+      rpi_wifi_ap_passphrase: "{{ vault_rpi_wifi_ap_passphrase }}"
+      rpi_wifi_ap_WAN: wlan0
+      rpi_wifi_ap_WLAN: wlan1
+
+      # Override the list of wifi networks to be configured byt rip3_network role
+      rpi_wifi_ap__rpi_network_wifi_APs: "{{  vault_rpi_wifi_ap__rpi_network_wifi_APs }}"

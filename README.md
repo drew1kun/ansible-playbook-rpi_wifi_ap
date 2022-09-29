@@ -33,20 +33,20 @@ Playbook Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `vault_wifi_ap_essid` | The Access Point ESSID | set your own in `vars/vault.yml` |
-| `vault_wifi_ap_passphrase` | The Access Point WPA/WPA2 passphrase | set your own in `vars/vault.yml` |
-| `vault_wifi_ap__rpi_network_wifi_APs` | The list of wifi networks to be configured on the system using the rpi_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi_network/defaults/main.yaml`][net-aps-link] for reference |
+| `vault_rpi_wifi_ap_essid` | The Access Point ESSID | set your own in `vars/vault.yml` |
+| `vault_rpi_wifi_ap_passphrase` | The Access Point WPA/WPA2 passphrase | set your own in `vars/vault.yml` |
+| `vault_rpi_wifi_ap__rpi_network_wifi_APs` | The list of wifi networks to be configured on the system using the rpi_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi_network/defaults/main.yaml`][net-aps-link] for reference |
 
 Dependencies
 ------------
 
  - [drew1kun.rpi_network][rpi_network-galaxy-link]
- - [drew1kun.wifi_ap][wifi_ap-galaxy-link]
+ - [drew1kun.rpi_wifi_ap][rpi_wifi_ap-galaxy-link]
 
 Install via ansible-galaxy:
 
     ansible-galaxy install drew1kun.rpi_network \
-                           drew1kun.wifi_ap
+                           drew1kun.rpi_wifi_ap
 
 Playbook Usage Example
 ---
@@ -60,7 +60,7 @@ Just put the `.vault.key` to the playbook dir and run play:
 
 ```
 ansible-playbook -u user \
-		 -k wifi_ap_playbook.yml \
+		 -k rpi_wifi_ap_playbook.yml \
 		 --vault-password-file=.vault.key
 ```
 
@@ -74,7 +74,7 @@ ansible-vault decrypt vars/main.yml --vault-password-file=.vault.key
 Then run play:
 
 ```
-ansible-playbook -u user -k wifi_ap_playbook.yml
+ansible-playbook -u user -k rpi_wifi_ap_playbook.yml
 ```
 
 ### OPTION 2:
@@ -87,7 +87,7 @@ export ANSIBLE_VAULT_PASSWORD_FILE=.vault.key
 Then run play:
 
 ```
-ansible-playbook -u user -k wifi_ap_playbook.yml
+ansible-playbook -u user -k rpi_wifi_ap_playbook.yml
 ```
 
 ### OPTION 3 (PREFERRED):
@@ -107,7 +107,7 @@ ansible-vault edit vars/vault.yml
 Then run play as follows:
 
 ```
-ansible-playbook --user user -k wifi_ap_playbook.yml
+ansible-playbook --user user -k rpi_wifi_ap_playbook.yml
 ```
 
 
@@ -123,7 +123,7 @@ Author Information
 Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
 [rpi_network-galaxy-link]: https://galaxy.ansible.com/drew1kun/rpi_network/
-[wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew1kun/wifi_ap/
+[rpi_wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew1kun/rpi_wifi_ap/
 [net-aps-link]: https://github.com/drew1kun/ansible-role-rpi_network/blob/master/defaults/main.yml
 [ansible-vault-link]: https://docs.ansible.com/ansible/latest/user_guide/vault.html
 
