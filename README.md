@@ -34,6 +34,7 @@ Playbook Variables
 |----------|-------------|---------|
 | `vault_wifi_ap_essid` | The Access Point ESSID | set your own in `vars/vault.yml` |
 | `vault_wifi_ap_passphrase` | The Access Point WPA/WPA2 passphrase | set your own in `vars/vault.yml` |
+| `vault_wifi_ap__rpi_network_wifi_APs` | The list of wifi networks to be configured on the system using the rpi3_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi_network/defaults/main.yaml`][net-aps-link] for reference |
 
 Dependencies
 ------------
@@ -58,8 +59,8 @@ Just put the `.vault.key` to the playbook dir and run play:
 
 ```
 ansible-playbook -u user \
-				 -k wifi_ap_playbook.yml \
-				 --vault-password-file=.vault.key
+			-k wifi_ap_playbook.yml \
+			--vault-password-file=.vault.key
 ```
 
 ### OPTION 1:
@@ -122,6 +123,7 @@ Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
 [rpi_network-galaxy-link]: https://galaxy.ansible.com/drew1kun/rpi_network/
 [wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew1kun/wifi_ap/
+[net-aps-link]: https://github.com/drew1kun/ansible-role-rpi_network/blob/master/defaults/main.yml
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew1kun/ansible-macos_setup/master/LICENSE
