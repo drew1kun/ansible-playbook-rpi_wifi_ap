@@ -10,7 +10,8 @@ Does the following:
  - Installs and configures `hostapd`.
  - Installs and configures `iptables-persistent` (for now needs a reboot to load the iptables kernel modules).
 
-It is assumed that the raspberry pi 3(with built in broadcom wifi adapter) is used with additiional Ralink usb wifi dongle.
+It is assumed that the Raspberry Pi 3 or later (with built in broadcom wifi adapter) is used with additional Ralink usb wifi dongle.
+It may also work with other RPI models, but just was not tested.
 
 The one I use it with is Ralink USB WiFi RT5370:
 
