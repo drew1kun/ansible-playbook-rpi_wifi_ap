@@ -59,8 +59,8 @@ Just put the `.vault.key` to the playbook dir and run play:
 
 ```
 ansible-playbook -u user \
-			-k wifi_ap_playbook.yml \
-			--vault-password-file=.vault.key
+		 -k wifi_ap_playbook.yml \
+		 --vault-password-file=.vault.key
 ```
 
 ### OPTION 1:
