@@ -34,7 +34,7 @@ Playbook Variables
 |----------|-------------|---------|
 | `vault_wifi_ap_essid` | The Access Point ESSID | set your own in `vars/vault.yml` |
 | `vault_wifi_ap_passphrase` | The Access Point WPA/WPA2 passphrase | set your own in `vars/vault.yml` |
-| `vault_wifi_ap__rpi_network_wifi_APs` | The list of wifi networks to be configured on the system using the rpi3_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi_network/defaults/main.yaml`][net-aps-link] for reference |
+| `vault_wifi_ap__rpi_network_wifi_APs` | The list of wifi networks to be configured on the system using the rpi_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi_network/defaults/main.yaml`][net-aps-link] for reference |
 
 Dependencies
 ------------
