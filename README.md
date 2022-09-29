@@ -124,6 +124,7 @@ Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 [rpi_network-galaxy-link]: https://galaxy.ansible.com/drew1kun/rpi_network/
 [wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew1kun/wifi_ap/
 [net-aps-link]: https://github.com/drew1kun/ansible-role-rpi_network/blob/master/defaults/main.yml
+[ansible-vault-link]: https://docs.ansible.com/ansible/latest/user_guide/vault.html
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew1kun/ansible-macos_setup/master/LICENSE
