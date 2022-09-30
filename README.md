@@ -22,14 +22,14 @@ The one I use it with is Ralink USB WiFi RT5370:
 ```
 
 Requirements
----
+----
 
 NOTE: Role requires Fact Gathering by ansible!
 
 Debian-like linux distro installed
 
 Playbook Variables
----
+----
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -38,7 +38,7 @@ Playbook Variables
 | `vault_rpi_wifi_ap__rpi_network_wifi_APs` | The list of wifi networks to be configured on the system using the rpi_network role | set your own in `vars/vault.yml`, please check [`drew1kun.rpi_network/defaults/main.yaml`][net-aps-link] for reference |
 
 Dependencies
-------------
+----
 
  - [drew1kun.rpi_network][rpi_network-galaxy-link]
  - [drew1kun.rpi_wifi_ap][rpi_wifi_ap-galaxy-link]
@@ -49,11 +49,11 @@ Install via ansible-galaxy:
                            drew1kun.rpi_wifi_ap
 
 Playbook Usage Example
----
+----
 **ATTENTION!** variables are set in **vars/vault.yml**,
 which is encrypted with [ansible-vault][ansible-vault-link].
 
-Therefore we have multiple options to run the play:
+Therefore, there are multiple options to run the play available:
 
 ### OPTION 0:
 Just put the `.vault.key` to the playbook dir and run play:
@@ -110,15 +110,13 @@ Then run play as follows:
 ansible-playbook --user user -k rpi_wifi_ap_playbook.yml
 ```
 
-
-
 License
 -------
 
 [MIT][mit-link]
 
 Author Information
-------------------
+----
 
 Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 
