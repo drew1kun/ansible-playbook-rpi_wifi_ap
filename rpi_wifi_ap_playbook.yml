@@ -1,4 +1,7 @@
 ---
+# Step 1: ansible-galaxy install -r requirements.yml --force
+# Step 2: ansible-playbook wifi_ap_playbook.yml -K --extra-vars "target=wifi_ap"
+#
 - hosts: "{{ target }}"
 
   vars_files:

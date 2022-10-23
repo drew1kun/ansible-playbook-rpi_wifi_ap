@@ -1,0 +1,7 @@
+---
+# Install all requirements from this file with:
+#   ansible-galaxy install -r requirements.yml --force
+#
+roles:
+  - src: https://github.com/drew1kun/ansible-role-rpi_wifi_ap.git
+    name: drew1kun.rpi_wifi_ap

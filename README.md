@@ -41,16 +41,27 @@ Dependencies
 ----
 
  - [drew1kun.rpi_network][rpi_network-galaxy-link]
- - [drew1kun.rpi_wifi_ap][rpi_wifi_ap-galaxy-link]
+ - [drew1kun.rpi\_wifi_ap][rpi_wifi_ap-galaxy-link]
 
-Install via ansible-galaxy:
+Install it with `requirements.yml`:
 
-    ansible-galaxy install drew1kun.rpi_network \
-                           drew1kun.rpi_wifi_ap
+```
+ansible-galaxy install -r requirements.yml --force
+```
+
+
+Or directly via ansible-galaxy:
+
+```
+ansible-galaxy install \
+	drew1kun.rpi_network \
+	drew1kun.rpi_wifi_ap
+```
 
 Playbook Usage Example
 ----
-**ATTENTION!** variables are set in **vars/vault.yml**,
+
+**ATTENTION!** Variables are set in `vars/vault.yml`,
 which is encrypted with [ansible-vault][ansible-vault-link].
 
 Therefore, there are multiple options to run the play available:
