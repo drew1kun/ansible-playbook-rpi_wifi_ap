@@ -1,5 +1,5 @@
 ---
-- hosts: raspberrypi_3
+- hosts: "{{ target }}"
 
   vars_files:
     - vars/vault.yml

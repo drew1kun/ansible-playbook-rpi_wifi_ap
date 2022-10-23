@@ -1,4 +1,4 @@
-# ansible-playbook: rpi3\_wifi\_ap
+# Ansible playbook: rpi3\_wifi_ap
 
 [![MIT licensed][mit-badge]][mit-link]
 
@@ -24,7 +24,7 @@ The one I use it with is Ralink USB WiFi RT5370:
 Requirements
 ----
 
-NOTE: Role requires Fact Gathering by ansible!
+**NOTE:** Role requires Fact Gathering by ansible!
 
 Debian-like linux distro installed
 
@@ -55,47 +55,12 @@ which is encrypted with [ansible-vault][ansible-vault-link].
 
 Therefore, there are multiple options to run the play available:
 
-### OPTION 0:
-Just put the `.vault.key` to the playbook dir and run play:
-
-```
-ansible-playbook -u user \
-		 -k rpi_wifi_ap_playbook.yml \
-		 --vault-password-file=.vault.key
-```
-
-### OPTION 1:
-Before running the role decrypt the file *vars/main.yml* with:
-
-```
-ansible-vault decrypt vars/main.yml --vault-password-file=.vault.key
-```
-
-Then run play:
-
-```
-ansible-playbook -u user -k rpi_wifi_ap_playbook.yml
-```
-
-### OPTION 2:
-Set environment variable:
-
-```
-export ANSIBLE_VAULT_PASSWORD_FILE=.vault.key
-```
-
-Then run play:
-
-```
-ansible-playbook -u user -k rpi_wifi_ap_playbook.yml
-```
-
-### OPTION 3 (PREFERRED):
+### OPTION 0 [RECOMMENDED]:
 add the following to **ansible.cfg**:
 
 ```
 [defaults]
-vault_password_file = .vault.key
+vault_password_file = ./vault.key
 ```
 
 Modify the **vars/vault.yml** as you wish using:
@@ -110,8 +75,44 @@ Then run play as follows:
 ansible-playbook --user user -k rpi_wifi_ap_playbook.yml
 ```
 
+### OPTION 1:
+Before running the role decrypt the file `vars/vault.yml` with:
+
+```
+ansible-vault decrypt vars/main.yml --vault-password-file=vault.key
+```
+
+Then run play:
+
+```
+ansible-playbook -u user -k rpi_wifi_ap_playbook.yml
+```
+
+### OPTION 2:
+Set environment variable:
+
+```
+export ANSIBLE_VAULT_PASSWORD_FILE=vault.key
+```
+
+Then run play:
+
+```
+ansible-playbook -u user -k rpi_wifi_ap_playbook.yml
+```
+
+### OPTION 3:
+
+Just put the `.vault.key` to the playbook dir and run play:
+
+```
+ansible-playbook -u user \
+		 -k rpi_wifi_ap_playbook.yml \
+		 --vault-password-file=vault.key
+```
+
 License
--------
+----
 
 [MIT][mit-link]
 
@@ -124,6 +125,5 @@ Andrew Shagayev | [e-mail](mailto:drewshg@gmail.com)
 [rpi_wifi_ap-galaxy-link]: https://galaxy.ansible.com/drew1kun/rpi_wifi_ap/
 [net-aps-link]: https://github.com/drew1kun/ansible-role-rpi_network/blob/master/defaults/main.yml
 [ansible-vault-link]: https://docs.ansible.com/ansible/latest/user_guide/vault.html
-
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew1kun/ansible-macos_setup/master/LICENSE
